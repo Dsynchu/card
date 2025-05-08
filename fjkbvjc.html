@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="transition duration-300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flip Card Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="script.js"></script> -->
+
+  <style>
+    .backface-hidden {
+      backface-visibility: hidden;
+       -webkit-backface-visibility: hidden;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 dark:bg-black text-gray-800 dark:text-white transition duration-300">
+
+  <!-- Toggle Button -->
+  <div class="toggle flex justify-end p-4">
+    <button id="toggleDark" class="px-4 py-2 bg-gray-800 text-white rounded-lg dark:bg-white dark:text-gray-900 transition duration-300">
+      Toggle Dark Mode
+    </button>
+  </div>
+
+  <!-- Main Container -->
+  <div class="min-h-screen flex items-center justify-center px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="group [perspective:1000px] w-64 h-80">
+        <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <!-- Front -->
+          <div class="absolute inset-0 bg-white dark:bg-zinc-900 rounded-xl shadow-lg flex flex-col items-center justify-center backface-hidden">
+            <img src="IMG_E3255 (2).JPG" class="rounded-full  h-30 w-24 object-cover mb-4" />
+            <h2 class="text-xl font-bold">parash</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-300">Frontend Developer</p>
+          </div>
+          <!-- Back -->
+          <div class="absolute inset-0 bg-blue-600 text-white rounded-xl px-4 py-6 [transform:rotateY(180deg)] backface-hidden">
+            <h3 class="text-lg font-semibold mb-2">About Me</h3>
+            <p class="text-sm mb-4">Code, design, repeat. Loves building UIs.</p>
+            <a href="mailto:arjun@example.com" class="text-sm underline">arjun@example.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group [perspective:1000px] w-64 h-80">
+        <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <div class="absolute inset-0 bg-white dark:bg-zinc-900 rounded-xl shadow-lg flex flex-col items-center justify-center backface-hidden">
+            <img src="IMG_E3255 (2).JPG" class="rounded-full h-30 w-24 object-cover mb-4" />
+            <h2 class="text-xl font-bold">dinesh</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-300">UI/UX Designer</p>
+          </div>
+          <div class="absolute inset-0 bg-purple-600 text-white rounded-xl px-4 py-6 [transform:rotateY(180deg)] backface-hidden">
+            <h3 class="text-lg font-semibold mb-2">About Me</h3>
+            <p class="text-sm mb-4">Creative designer with a love for clean UIs.</p>
+            <a href="mailto:neha@example.com" class="text-sm underline">neha@example.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group [perspective:1000px] w-64 h-80">
+        <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <div class="absolute inset-0 bg-white dark:bg-zinc-900 rounded-xl shadow-lg flex flex-col items-center justify-center backface-hidden">
+            <img src="IMG_E3255 (2).JPG" class="rounded-full h-30 w-24 object-cover mb-4" />
+            <h2 class="text-xl font-bold">abhishek</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-300">Full Stack Dev</p>
+          </div>
+          <div class="absolute inset-0 bg-green-600 text-white rounded-xl px-4 py-6 [transform:rotateY(180deg)] backface-hidden">
+            <h3 class="text-lg font-semibold mb-2">About Me</h3>
+            <p class="text-sm mb-4">Backend, frontend – I do it all.</p>
+            <a href="mailto:sameer@example.com" class="text-sm underline">sameer@example.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+ 
+
+
+</body>
+<script>
+  const toggleBtn = document.getElementById('toggleDark');
+  const html = document.documentElement;
+
+  toggleBtn.addEventListener('click', () => {
+    html.classList.toggle('dark');
+  });
+</script>
+
+  
+</html>
